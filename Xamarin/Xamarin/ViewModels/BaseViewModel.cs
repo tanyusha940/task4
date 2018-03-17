@@ -12,7 +12,7 @@ namespace Xamarin.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Cocktails> DataStore => DependencyService.Get<IDataStore<Cocktails>>() ?? new MockDataStore();
+        public IDataStore<Cocktails> DataStore => DependencyService.Get<IDataStore<Cocktails>>() ?? new CocktailsDataStore();
 
         bool isBusy = false;
         public bool IsBusy

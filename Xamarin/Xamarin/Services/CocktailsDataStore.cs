@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Models;
 
-[assembly: Xamarin.Forms.Dependency(typeof(Xamarin.Services.MockDataStore))]
+[assembly: Xamarin.Forms.Dependency(typeof(Xamarin.Services.CocktailsDataStore))]
 namespace Xamarin.Services
 {
-    public class MockDataStore : IDataStore<Cocktails>
+    public class CocktailsDataStore : IDataStore<Cocktails>
     {
         List<Cocktails> items;
 
-        public MockDataStore()
+        public CocktailsDataStore()
         {
             items = new List<Cocktails>();
             var mockItems = new List<Cocktails>
