@@ -6,12 +6,36 @@
     <AbsoluteLayout>
         <Label Text="Название:" FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize"  />
         <Label Text="{Binding Title}" FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="100, 5, AutoSize, AutoSize" />
-        <Label Text="Ингредиенты:" FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 30, AutoSize, AutoSize"  />
+        <Label Text="Градус:" FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 30, AutoSize, AutoSize"  />
         <Label Text="{Binding Degrees}" FontSize="Small"/>
-        <Label Text="{Binding Prescriptions}" 
+        <StackLayout>
+            <ListView x:Name="ItemsListView" 
+                ItemsSource="{Binding Prescriptions}"
+                VerticalOptions="FillAndExpand"
+                 HasUnevenRows="true"
+                 IsPullToRefreshEnabled="true"
+                 CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <AbsoluteLayout>
+                                <Label Text="Крепость: " 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
-                                       FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="110, 10, AutoSize, AutoSize"  />
-
+                                       FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="110, 40, AutoSize, AutoSize"  />
+                                <Label Text="{Binding AmountIngredient}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="165, 40, AutoSize, AutoSize"  />
+                                <Label Text="{Binding Ingredients.NameIngredient}" 
+                                                    LineBreakMode="NoWrap" 
+                                                    Style="{DynamicResource ListItemTextStyle}" 
+                                                    FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="200, 40, AutoSize, AutoSize"  />
+                            </AbsoluteLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </AbsoluteLayout>
 </ContentPage>
