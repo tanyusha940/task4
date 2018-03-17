@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Models;
 
-[assembly: Xamarin.Forms.Dependency(typeof(Xamarin.Services.IngredientsDataStore))]
 namespace Xamarin.Services
 {
     class IngredientsDataStore : IDataStore<Ingredients>

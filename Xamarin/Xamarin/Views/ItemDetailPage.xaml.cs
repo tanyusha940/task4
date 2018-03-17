@@ -17,7 +17,9 @@ namespace Xamarin.Views
         {
             InitializeComponent();
 
-            BindingContext = this.viewModel = viewModel;
+            this.viewModel = viewModel;
+
+            BindingContext = this.viewModel;
         }
 
         public ItemDetailPage()
