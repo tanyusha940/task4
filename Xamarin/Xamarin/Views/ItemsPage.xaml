@@ -2,14 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin.Views.ItemsPage"
-              Title="{Binding Title}"
+              Title="Коктейли"
              x:Name="BrowseItemsPage">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="ItemsListView" 
+        <Grid>
+            <StackLayout>
+                <Label x:Name="headerPickter" Text="Степень опьянения:" FontSize="Large" />
+                <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Чуть-чуть</x:String>
+                        <x:String>На веселе</x:String>
+                        <x:String>Еще немного и хватит</x:String>
+                        <x:String>В говно</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label x:Name="headerStepper" Text="Количество человек" FontSize="Large" />
+                <Stepper Minimum="0" Maximum="100" Increment="1" ValueChanged="OnStepperValueChanged" />
+                <StackLayout>
+                    <ListView x:Name="ItemsListView" 
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                  HasUnevenRows="true"
@@ -18,32 +28,38 @@
                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                  CachingStrategy="RecycleElement"
                  ItemSelected="OnItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <AbsoluteLayout>
-                                <Label Text="{Binding Name}" 
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <AbsoluteLayout>
+                                        <Label Text="{Binding Name}" 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
                                        FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="110, 10, AutoSize, AutoSize"  />
-                                <Label Text="Объем: " 
+                                        <Label Text="Объем: " 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
                                        FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="110, 40, AutoSize, AutoSize"  />
-                                <Label Text="{Binding AmountCocktail}" 
+                                        <Label Text="{Binding AmountCocktail}" 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
                                        FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="165, 40, AutoSize, AutoSize"  />
-                                <Label Text="мл" 
+                                        <Label Text="мл" 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
-                                       FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="185, 40, AutoSize, AutoSize"  />
-                                <Image Source="{Binding ImageCocktails}" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize" />
-                            </AbsoluteLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                                       FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="190, 40, AutoSize, AutoSize"  />
+                                        <Image Source="{Binding ImageCocktails}" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize" />
+                                        <Switch  IsToggled="{Binding IsChecked}" AbsoluteLayout.LayoutBounds="300, 15, AutoSize, AutoSize"/>
+                                    </AbsoluteLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <Button Text = "Подсчитать" FontSize="Large" BorderWidth="1"
+        HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+        Clicked="OnButtonClicked" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

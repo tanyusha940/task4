@@ -10,6 +10,7 @@ namespace Xamarin.Models
         public int DegreesCocktail { get; set; }
         public int AmountCocktail { get; set; }
         public string ImageCocktails { get; set; }
+        public bool IsChecked { get; set; }
 
         public ICollection<Prescriptions> Prescriptions { get; set; }
 

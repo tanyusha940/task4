@@ -24,7 +24,21 @@ namespace Xamarin.Views
 
             BindingContext = viewModel = new ItemsViewModel();
         }
-
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            if (headerStepper != null)
+                headerStepper.Text = String.Format("Будет пить: {0:F1}", e.NewValue);
+        }
+        private void OnButtonClicked(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Text = "Нажато!";
+            button.BackgroundColor = Color.Red;
+        }
+        void picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            headerPickter.Text = "Вы выбрали: " + picker.Items[picker.SelectedIndex];
+        }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Cocktails;
