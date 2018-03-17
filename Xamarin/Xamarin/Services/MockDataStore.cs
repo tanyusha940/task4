@@ -37,22 +37,6 @@ namespace Xamarin.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Cocktails item)
-        {
-            var _item = items.Where((Cocktails arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(_item);
-            items.Add(item);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<bool> DeleteItemAsync(Cocktails item)
-        {
-            var _item = items.Where((Cocktails arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(_item);
-
-            return await Task.FromResult(true);
-        }
 
         public async Task<Cocktails> GetItemAsync(int id)
         {

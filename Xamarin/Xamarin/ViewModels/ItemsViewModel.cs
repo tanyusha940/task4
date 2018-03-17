@@ -21,12 +21,6 @@ namespace Xamarin.ViewModels
             Items = new ObservableCollection<Cocktails>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Cocktails>(this, "AddItem", async (obj, item) =>
-            {
-                var _item = item as Cocktails;
-                Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
-            });
         }
 
         async Task ExecuteLoadItemsCommand()
