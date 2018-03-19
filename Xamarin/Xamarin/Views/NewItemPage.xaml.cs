@@ -12,8 +12,8 @@ namespace Xamarin.Views
     public partial class NewItemPage : ContentPage
     {
         public Cocktails Item { get; set; }
-
-        public NewItemPage(Dictionary<string, int> a)
+        //Dictionary<string, int> a
+        public NewItemPage(List<string> name, List<int> amount, int first)
         {
             InitializeComponent();
 
@@ -21,7 +21,7 @@ namespace Xamarin.Views
             {
                 Name = "Item name"
             };
-            lolo.Text = a.Values.Count.ToString();
+            lolo.Text = amount.Count.ToString();
             BindingContext = this;
         }
 

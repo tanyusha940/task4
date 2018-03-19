@@ -29,7 +29,9 @@ namespace Xamarin.Views
         private async void OnButtonClicked(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            Dictionary<string, int> ing = new Dictionary<string, int>();
+            //Dictionary<string, int> ing = new Dictionary<string, int>();
+            List<string> name = new List<string>();
+            List<int> amount = new List<int>();
             int first = (picker.SelectedIndex + 1) * 2 * Int32.Parse(step.Value.ToString());
             foreach (var x in viewModel.Items)
             {
@@ -37,11 +39,13 @@ namespace Xamarin.Views
                 {
                     foreach(var p in x.Prescriptions)
                     {
-                        ing.Add(p.Ingredients.NameIngredient, p.AmountIngredient);
+                        name.Add(p.Ingredients.NameIngredient);
+                        amount.Add(p.AmountIngredient * first);
+                        //ing.Add(p.Ingredients.NameIngredient, p.AmountIngredient);
                     }
                 }
             }            
-            await Navigation.PushAsync(new NewItemPage(ing));
+            await Navigation.PushAsync(new NewItemPage(name,amount,first));
         }
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
