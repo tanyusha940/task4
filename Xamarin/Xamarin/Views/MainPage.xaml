@@ -4,26 +4,13 @@
             xmlns:views="clr-namespace:Xamarin.Views"
             x:Class="Xamarin.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="Выбор за вами!">
+            
             <x:Arguments>
                 <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
         
-        <NavigationPage Title="About">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:AboutPage />
-            </x:Arguments>
-        </NavigationPage>
+        
     </TabbedPage.Children>
 </TabbedPage>
