@@ -4,16 +4,16 @@
              x:Class="Xamarin.Views.ItemsPage"
               Title="Коктейли"
              x:Name="BrowseItemsPage">
-    <ContentPage.Content>
+    <ContentPage.Content >
         <Grid>
             <StackLayout>
                 <Label x:Name="headerPickter" Text="Степень опьянения:" FontSize="Large" />
                 <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
                     <Picker.Items>
-                        <x:String>Чуть-чуть</x:String>
-                        <x:String>На веселе</x:String>
-                        <x:String>Еще немного и хватит</x:String>
-                        <x:String>В говно</x:String>
+                        <x:String x:Name ="firstPicker">Чуть-чуть</x:String>
+                        <x:String x:Name ="secondPicker">На веселе</x:String>
+                        <x:String x:Name ="tirdPicker">Еще немного и хватит</x:String>
+                        <x:String x:Name ="fourthPicker">В говно</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label x:Name="headerStepper" Text="Количество человек" FontSize="Large" />
