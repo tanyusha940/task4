@@ -21,7 +21,15 @@ namespace Xamarin.Views
             {
                 Name = "Item name"
             };
-            lolo.Text = amount.Count.ToString();
+
+            var a = "";
+            int length = name.Count;
+
+            for (int i = 0; i < name.Count; i++)
+            {
+                a +=name[i].ToString() + " ";
+            }
+            lolo.Text = name[0].ToString();
             BindingContext = this;
         }
 

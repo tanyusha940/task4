@@ -21,18 +21,19 @@ namespace Xamarin.Views
 
             BindingContext = viewModel = new ItemsViewModel();
         }
-        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            if (headerStepper != null)
-                headerStepper.Text = String.Format("Будет пить: {0:F1}", e.NewValue);
-        }
+        //private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    if (headerStepper != null)
+        //        headerStepper.Text = String.Format("Будет пить: {0:F1}", e.NewValue);
+        //}
         private async void OnButtonClicked(object sender, System.EventArgs e)
         {
+            //*Int32.Parse(step.Value.ToString())
             Button button = (Button)sender;
             //Dictionary<string, int> ing = new Dictionary<string, int>();
             List<string> name = new List<string>();
             List<int> amount = new List<int>();
-            int first = (picker.SelectedIndex + 1) * 2 * Int32.Parse(step.Value.ToString());
+            int first = (picker.SelectedIndex + 1) * 2 ;
             foreach (var x in viewModel.Items)
             {
                 if (x.IsChecked == true)
