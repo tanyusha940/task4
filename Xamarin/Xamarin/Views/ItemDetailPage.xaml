@@ -3,57 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Xamarin.Views.ItemDetailPage"
              Title="{Binding Title}">
-    <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>-->
-        <Label Text="Название:" FontSize="20" FontAttributes="Italic" Grid.Column="0" Grid.Row="0"  />
-        <Label Text="{Binding Title}" FontSize="20" FontAttributes="Italic" Grid.Column="1" Grid.Row="0" />
+    <AbsoluteLayout>
+        <Label Text="Название: " LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize" />
+        <Label Text="Объем: " LineBreakMode="NoWrap"  Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="200, 5, AutoSize, AutoSize" />
         <ListView x:Name="ItemsListView" 
-                ItemsSource="{Binding Prescriptions}"
-                VerticalOptions="FillAndExpand"
-                 HasUnevenRows="true"
-                 IsPullToRefreshEnabled="true"
-                 CachingStrategy="RecycleElement">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                        <Grid>
-
-                            <Label Text="{Binding Ingredients.NameIngredient}" 
-                                                    LineBreakMode="NoWrap" 
-                                                    Style="{DynamicResource ListItemTextStyle}" 
-                                                    FontSize="15" FontAttributes="Italic" Grid.Column="0" Grid.Row="2"  />
-                            <Label Text="Объем: " 
-                                       LineBreakMode="NoWrap" 
-                                       Style="{DynamicResource ListItemTextStyle}" 
-                                       FontSize="15" FontAttributes="Italic" Grid.Column="1" Grid.Row="2" />
-                            <Label Text="{Binding AmountIngredient}" 
-                                       LineBreakMode="NoWrap" 
-                                       Style="{DynamicResource ListItemTextStyle}" 
-                                       FontSize="15" FontAttributes="Italic" Grid.Column="2" Grid.Row="2"  />
-
-                        </Grid>
+                    ItemsSource="{Binding Prescriptions}"
+                    VerticalOptions="FillAndExpand"
+                        HasUnevenRows="true"
+                        IsPullToRefreshEnabled="true"
+                        CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <AbsoluteLayout>
+                        <Label Text="{Binding Ingredients.NameIngredient}"  LineBreakMode="NoWrap" 
+                                                        Style="{DynamicResource ListItemTextStyle}" 
+                                                        FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 40, AutoSize, AutoSize" />
+                        <Label Text="{Binding AmountIngredient}"  LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="200, 40, AutoSize, AutoSize"  />
+                            <Label Text="Мл"  LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="225, 40, AutoSize, AutoSize"  />
+                        </AbsoluteLayout>
                     </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-    </Grid>
-    <!--<TableView >
-        <TableView.Root>
-            <TableRoot>
-                <TableSection Title="{Binding Title}">
-                    <TextCell Text="{Binding Ingredients.NameIngredient}" />
-                    <TextCell Text="Сохранить" />
-                </TableSection>
-            </TableRoot>
-        </TableView.Root>
-    </TableView>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </AbsoluteLayout>
 </ContentPage>

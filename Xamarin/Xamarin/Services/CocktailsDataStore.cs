@@ -24,9 +24,9 @@ namespace Xamarin.Services
                 new Ingredients{Id = 5, NameIngredient = "Бурбон"},
                 new Ingredients{Id = 6, NameIngredient = "Сахарный сироп"},
                 new Ingredients{Id = 7, NameIngredient = "Лимонный сок"},
-                new Ingredients{Id = 8, NameIngredient = "Лимон"},
+                new Ingredients{Id = 8, NameIngredient = "Белый ром"},
                 new Ingredients{Id = 9, NameIngredient = "Апельсиновая цедра"},
-                new Ingredients{Id = 10, NameIngredient = "Апельсин"},
+                new Ingredients{Id = 10, NameIngredient = "Апельсиновый сок"},
                 new Ingredients{Id = 11, NameIngredient = "Апельсин"},
 
             };
