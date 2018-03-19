@@ -13,7 +13,7 @@ namespace Xamarin.Views
     {
         public Cocktails Item { get; set; }
 
-        public NewItemPage()
+        public NewItemPage(Dictionary<string, int> a)
         {
             InitializeComponent();
 
@@ -21,7 +21,7 @@ namespace Xamarin.Views
             {
                 Name = "Item name"
             };
-
+            lolo.Text = a.Values.Count.ToString();
             BindingContext = this;
         }
 

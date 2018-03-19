@@ -10,12 +10,13 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Models;
 using Xamarin.Views;
 using Xamarin.ViewModels;
+using System.ComponentModel;
 
 namespace Xamarin.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ItemsPage : ContentPage
-	{
+	public partial class ItemsPage : ContentPage, INotifyPropertyChanged
+    {
         ItemsViewModel viewModel;
 
         public ItemsPage()
@@ -29,11 +30,22 @@ namespace Xamarin.Views
             if (headerStepper != null)
                 headerStepper.Text = String.Format("Будет пить: {0:F1}", e.NewValue);
         }
-        private void OnButtonClicked(object sender, System.EventArgs e)
+        private async void OnButtonClicked(object sender, System.EventArgs e)
         {
             Button button = (Button)sender;
-            button.Text = "Нажато!";
-            button.BackgroundColor = Color.Red;
+            Dictionary<string, int> ing = new Dictionary<string, int>();
+            int first = (picker.SelectedIndex + 1) * 2 * Int32.Parse(step.Value.ToString());
+            foreach (var x in viewModel.Items)
+            {
+                if (x.IsChecked == true)
+                {
+                    foreach(var p in x.Prescriptions)
+                    {
+                        ing.Add(p.Ingredients.NameIngredient, p.AmountIngredient);
+                    }
+                }
+            }            
+            await Navigation.PushAsync(new NewItemPage(ing));
         }
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -51,10 +63,6 @@ namespace Xamarin.Views
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
 
         protected override void OnAppearing()
         {

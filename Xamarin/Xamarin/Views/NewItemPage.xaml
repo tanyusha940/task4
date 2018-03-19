@@ -10,7 +10,7 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Item.Text}" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
+            <Label x:Name="lolo" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>

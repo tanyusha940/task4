@@ -34,8 +34,8 @@ namespace Xamarin.Services
             {
                 new Prescriptions{Id = 1, IdCocktails = 1, IdIngredient = 1, AmountIngredient = 50, Ingredients = ingredientsItems[0] },
                 new Prescriptions{Id = 2, IdCocktails = 1, IdIngredient = 2, AmountIngredient = 25, Ingredients = ingredientsItems[1] },
-                //new Prescriptions{Id = 3, IdCocktails = 2, IdIngredient = 3, AmountIngredient = 50 },
-                //new Prescriptions{Id = 4, IdCocktails = 2, IdIngredient = 4, AmountIngredient = 25 },
+                new Prescriptions{Id = 3, IdCocktails = 2, IdIngredient = 3, AmountIngredient = 50, Ingredients = ingredientsItems[2] },
+                new Prescriptions{Id = 4, IdCocktails = 2, IdIngredient = 4, AmountIngredient = 25, Ingredients = ingredientsItems[3] },
                 //new Prescriptions{Id = 5, IdCocktails = 3, IdIngredient = 5, AmountIngredient = 50 },
                 //new Prescriptions{Id = 6, IdCocktails = 3, IdIngredient = 6, AmountIngredient = 15 },
                 //new Prescriptions{Id = 7, IdCocktails = 3, IdIngredient = 7, AmountIngredient = 30 },
@@ -52,7 +52,11 @@ namespace Xamarin.Services
                 {
                     prescriptionsItem[0], prescriptionsItem[1]
                 }},
-                //new Cocktails { Id = 2, Name = "Черный русский",DegreesCocktail = 35, AmountCocktail = 37 ,ImageCocktails = "http://res.cloudinary.com/task04/image/upload/v1520681416/icon_chernyi_russkii-image-final.jpg", IsChecked = false},
+                new Cocktails { Id = 2, Name = "Черный русский",DegreesCocktail = 35, AmountCocktail = 37 ,ImageCocktails = "http://res.cloudinary.com/task04/image/upload/v1520681416/icon_chernyi_russkii-image-final.jpg", IsChecked = false,
+                Prescriptions = new List<Prescriptions>
+                    {
+                        prescriptionsItem[2], prescriptionsItem[3]
+                    }},
                 //new Cocktails { Id = 3, Name = "Виски сауэр", DegreesCocktail = 40, AmountCocktail = 120,ImageCocktails = "http://res.cloudinary.com/task04/image/upload/v1520681417/icon_Classic-whiskey-sour1.jpg", IsChecked = false},
                 //new Cocktails { Id = 3, Name = "Отвертка", DegreesCocktail = 40, AmountCocktail = 120,ImageCocktails = "http://res.cloudinary.com/task04/image/upload/v1520681415/icon__DDE6586.jpg", IsChecked = false },
             };
