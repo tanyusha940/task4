@@ -10,9 +10,9 @@
             <Label x:Name="secondIngredient" FontSize="Medium" />
             <Label x:Name="secondAmount" FontSize="Medium" />
             <Label x:Name="thirdIngredient" FontSize="Medium" />
-            <Label x:Name="secondAmount" FontSize="Medium" />
+            <Label x:Name="thirdAmount" FontSize="Medium" />
             <Label x:Name="fourthIngredient" FontSize="Medium" />
-            <Label x:Name="secondAmount" FontSize="Medium" />
+            <Label x:Name="fourthAmount" FontSize="Medium" />
             <Label x:Name="fifthIngredient" FontSize="Medium" />
             
         </StackLayout>

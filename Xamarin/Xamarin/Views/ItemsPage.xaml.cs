@@ -36,7 +36,7 @@ namespace Xamarin.Views
 
 
             List<string> name = new List<string>();
-            //List<int> amount = new List<int>();
+            List<int> amount = new List<int>();
             int first = (picker.SelectedIndex + 1) * 2;
             foreach (var x in viewModel.Items)
             {
@@ -46,12 +46,14 @@ namespace Xamarin.Views
                     {
                         string temp = p.Ingredients.NameIngredient;
                         name.Add(temp);
+                        int tempAmount = p.AmountIngredient * first;
+                        amount.Add(tempAmount);
                     }
                 }
             }
             //firstGrid.IsVisible = false;
             //secondGrid.IsVisible = true;
-            Navigation.PushAsync(new NewItemPage(name, first));
+            Navigation.PushAsync(new NewItemPage(name, amount));
         }
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {
