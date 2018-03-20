@@ -18,7 +18,7 @@
                     </Picker.Items>
                 </Picker>
                 <!--<Label x:Name="headerStepper" Text="Количество человек" FontSize="Large" />
-                <Stepper x:Name="step" Minimum="0" Maximum="100" Increment="1" ValueChanged="OnStepperValueChanged" />-->
+                <Stepper x:Name="step" Minimum="1" Maximum="100" Increment="1" ValueChanged="OnStepperValueChanged" />-->
                 <StackLayout>
                     <ListView x:Name="ItemsListView" 
                 ItemsSource="{Binding Items}"
@@ -63,7 +63,7 @@
             </StackLayout>
         </Grid>
         <Grid x:Name="secondGrid" IsVisible="False">
-                <AbsoluteLayout>
+                <!--<AbsoluteLayout>
                     <Label Text="Название: " LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" 
                                         FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize" />
                     <Label Text="Объем: " LineBreakMode="NoWrap"  Style="{DynamicResource ListItemTextStyle}" 
@@ -78,7 +78,7 @@
                             <DataTemplate>
                                 <ViewCell>
                                     <Label Text="qww"   />
-                                    <!--<AbsoluteLayout>
+                                    --><!--<AbsoluteLayout>
                                         <Label Text="{Binding Ingredients.NameIngredient}"  LineBreakMode="NoWrap" 
                                                         Style="{DynamicResource ListItemTextStyle}" 
                                                         FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 40, AutoSize, AutoSize" />
@@ -88,12 +88,12 @@
                                         <Label Text="Мл"  LineBreakMode="NoWrap" 
                                             Style="{DynamicResource ListItemTextStyle}" 
                                             FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="225, 40, AutoSize, AutoSize"  />
-                                    </AbsoluteLayout>-->
+                                    </AbsoluteLayout>--><!--
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                </AbsoluteLayout>
+                </AbsoluteLayout>-->
             </Grid>
         </Grid>
     </ContentPage.Content>

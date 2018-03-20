@@ -33,26 +33,25 @@ namespace Xamarin.Views
             
             //*Int32.Parse(step.Value.ToString())
             Button button = (Button)sender;
-            //Dictionary<string, int> ing = new Dictionary<string, int>();
 
-            //List<string> name = new List<string>();
+
+            List<string> name = new List<string>();
             //List<int> amount = new List<int>();
             int first = (picker.SelectedIndex + 1) * 2;
-            //foreach (var x in viewModel.Items)
-            //{
-            //    if (x.IsChecked == true)
-            //    {
-            //        foreach (var p in x.Prescriptions)
-            //        {
-            //            amount.Add(itemDetail.Item.AmountCocktail * first);
-            //            name.Add(p.Ingredients.NameIngredient);
-            //            ing.Add(p.Ingredients.NameIngredient, p.AmountIngredient);
-            //        }
-            //    }
-            //}
-            firstGrid.IsVisible = false;
-            secondGrid.IsVisible = true;
-            //await Navigation.PushAsync(new NewItemPage(name,amount,first));
+            foreach (var x in viewModel.Items)
+            {
+                if (x.IsChecked == true)
+                {
+                    foreach (var p in x.Prescriptions)
+                    {
+                        string temp = p.Ingredients.NameIngredient;
+                        name.Add(temp);
+                    }
+                }
+            }
+            //firstGrid.IsVisible = false;
+            //secondGrid.IsVisible = true;
+            Navigation.PushAsync(new NewItemPage(name, first));
         }
         void picker_SelectedIndexChanged(object sender, EventArgs e)
         {

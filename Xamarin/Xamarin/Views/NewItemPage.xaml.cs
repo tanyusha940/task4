@@ -11,9 +11,10 @@ namespace Xamarin.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
+        private StackLayout stackLayout = new StackLayout();
         public Cocktails Item { get; set; }
         //Dictionary<string, int> a
-        public NewItemPage(List<string> name, List<int> amount, int first)
+        public NewItemPage( List<string> name, int first)
         {
             InitializeComponent();
 
@@ -22,21 +23,33 @@ namespace Xamarin.Views
                 Name = "Item name"
             };
 
+            //showIngridients(amount, first);
             var a = "";
-            int length = name.Count;
+            //int length = name.Count;
 
             for (int i = 0; i < name.Count; i++)
             {
-                a +=name[i].ToString() + " ";
+                a += name[i].ToString() + " ";
+
             }
-            lolo.Text = name[0].ToString();
+            firstIngredient.Text = name[0].ToString();
+            secondIngredient.Text = name[1].ToString();
+            thirdIngredient.Text = name[2].ToString();
+            fourthIngredient.Text = name[3].ToString();
             BindingContext = this;
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
+        private void showIngridients(List<string> total, int coef)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            for (int i = 0; i < total.Count; i++)
+            {
+                stackLayout.Children.Add(new Label
+                {
+                    Text = "Ingridients for : " + total.ToString(),
+
+                });
+                //Read_From_File(total.ElementAt(i) + ".txt", coef);
+            }
         }
     }
 }
