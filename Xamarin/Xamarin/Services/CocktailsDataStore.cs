@@ -66,7 +66,7 @@ namespace Xamarin.Services
                 new Cocktails { Id = 4, Name = "Отвертка", DegreesCocktail = 40, AmountCocktail = 120,ImageCocktails = "http://res.cloudinary.com/task04/image/upload/v1520681415/icon__DDE6586.jpg", IsChecked = false ,
                 Prescriptions = new List<Prescriptions>
                 {
-                    prescriptionsItem[8],prescriptionsItem[9],prescriptionsItem[10]
+                    prescriptionsItem[8],prescriptionsItem[9]
                 }},
             };
 
