@@ -6,6 +6,7 @@
              x:Name="BrowseItemsPage">
     <ContentPage.Content >
         <Grid>
+            <Grid x:Name="firstGrid" IsVisible="True">
             <StackLayout>
                 <Label x:Name="headerPickter" Text="Степень опьянения:" FontSize="Large" />
                 <Picker x:Name="picker" SelectedIndexChanged="picker_SelectedIndexChanged">
@@ -60,6 +61,40 @@
         HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
         Clicked="OnButtonClicked" />
             </StackLayout>
+        </Grid>
+        <Grid x:Name="secondGrid" IsVisible="False">
+                <AbsoluteLayout>
+                    <Label Text="Название: " LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 5, AutoSize, AutoSize" />
+                    <Label Text="Объем: " LineBreakMode="NoWrap"  Style="{DynamicResource ListItemTextStyle}" 
+                                        FontSize="20" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="200, 5, AutoSize, AutoSize" />
+                    <ListView x:Name="ItemsListView" 
+                    ItemsSource="{Binding Prescriptions}"
+                    VerticalOptions="FillAndExpand"
+                        HasUnevenRows="true"
+                        IsPullToRefreshEnabled="true"
+                        CachingStrategy="RecycleElement">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="qww"   />
+                                    <!--<AbsoluteLayout>
+                                        <Label Text="{Binding Ingredients.NameIngredient}"  LineBreakMode="NoWrap" 
+                                                        Style="{DynamicResource ListItemTextStyle}" 
+                                                        FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="5, 40, AutoSize, AutoSize" />
+                                        <Label Text="{Binding AmountIngredient}"  LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="200, 40, AutoSize, AutoSize"  />
+                                        <Label Text="Мл"  LineBreakMode="NoWrap" 
+                                            Style="{DynamicResource ListItemTextStyle}" 
+                                            FontSize="15" FontAttributes="Italic" AbsoluteLayout.LayoutBounds="225, 40, AutoSize, AutoSize"  />
+                                    </AbsoluteLayout>-->
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </AbsoluteLayout>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
