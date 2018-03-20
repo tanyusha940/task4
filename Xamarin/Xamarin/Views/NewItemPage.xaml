@@ -4,16 +4,30 @@
              x:Class="Xamarin.Views.NewItemPage"
 		     Title="">
     <ContentPage.Content>
+       
         <StackLayout Spacing="20" Padding="15">
-            <Label x:Name="firstIngredient" FontSize="Medium" />
-            <Label x:Name="firstAmount" FontSize="Medium" />
-            <Label x:Name="secondIngredient" FontSize="Medium" />
-            <Label x:Name="secondAmount" FontSize="Medium" />
-            <Label x:Name="thirdIngredient" FontSize="Medium" />
-            <Label x:Name="thirdAmount" FontSize="Medium" />
-            <Label x:Name="fourthIngredient" FontSize="Medium" />
-            <Label x:Name="fourthAmount" FontSize="Medium" />
-            <Label x:Name="fifthIngredient" FontSize="Medium" />
+            <Label Text="Необходимые ингридиенты: " FontSize="30" FontAttributes="Italic"/>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="firstIngredient" FontSize="20" FontAttributes="Italic" />
+                <Label x:Name="firstAmount" FontSize="20" FontAttributes="Italic" />
+                <Label Text="Мл" FontSize="20" FontAttributes="Italic" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="secondIngredient" FontSize="20" FontAttributes="Italic" />
+                <Label x:Name="secondAmount" FontSize="20" FontAttributes="Italic" />
+                <Label Text="Мл" FontSize="20" FontAttributes="Italic"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="thirdIngredient" FontSize="20" FontAttributes="Italic"/>
+                <Label x:Name="thirdAmount" FontSize="20" FontAttributes="Italic" />
+                <Label Text="Мл" FontSize="20" FontAttributes="Italic" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="fourthIngredient" FontSize="20" FontAttributes="Italic" />
+                <Label x:Name="fourthAmount" FontSize="20" FontAttributes="Italic" />
+                <Label Text="Мл" FontSize="20" FontAttributes="Italic" />
+            </StackLayout>
+            <Label x:Name="fifthIngredient" FontSize="20" FontAttributes="Italic" />
             
         </StackLayout>
     </ContentPage.Content>
